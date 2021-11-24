@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:dev/paymentpage.dart';
 
 void main() => runApp(MaterialApp(
-      home: Paypage(),
+      home: Login(),
     ));
 
 class Login extends StatelessWidget {
@@ -27,8 +27,9 @@ class Login extends StatelessWidget {
                     child: Text('Login',
                         style: TextStyle(
                           fontSize: 28,
-                          letterSpacing: 2.0,
-                          color: Colors.black87,
+                          letterSpacing: 1.25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
                         )),
                   ),
                 ],

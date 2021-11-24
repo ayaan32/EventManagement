@@ -199,6 +199,7 @@ class Profile extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
+            SizedBox(height: 150),
           ],
         ),
       ),
