@@ -33,7 +33,7 @@ class Profile extends StatelessWidget {
                     hintText: 'Name',
                     hintStyle: TextStyle(color: Colors.white70),
                     filled: true,
-                    fillColor: Colors.black,
+                    fillColor: Colors.black87,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -59,7 +59,7 @@ class Profile extends StatelessWidget {
                     hintText: 'Address',
                     hintStyle: TextStyle(color: Colors.white70),
                     filled: true,
-                    fillColor: Colors.black,
+                    fillColor: Colors.black87,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -85,7 +85,7 @@ class Profile extends StatelessWidget {
                     hintText: 'Contact',
                     hintStyle: TextStyle(color: Colors.white70),
                     filled: true,
-                    fillColor: Colors.black,
+                    fillColor: Colors.black87,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -111,7 +111,7 @@ class Profile extends StatelessWidget {
                     hintText: 'Emergency Contact',
                     hintStyle: TextStyle(color: Colors.white70),
                     filled: true,
-                    fillColor: Colors.black,
+                    fillColor: Colors.black87,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -137,7 +137,7 @@ class Profile extends StatelessWidget {
                     hintText: 'Email',
                     hintStyle: TextStyle(color: Colors.white70),
                     filled: true,
-                    fillColor: Colors.black,
+                    fillColor: Colors.black87,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -163,7 +163,7 @@ class Profile extends StatelessWidget {
                     hintText: 'Events',
                     hintStyle: TextStyle(color: Colors.white70),
                     filled: true,
-                    fillColor: Colors.black,
+                    fillColor: Colors.black87,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
