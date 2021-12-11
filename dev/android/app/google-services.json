@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1029453634709",
+    "project_id": "shubharam-events",
+    "storage_bucket": "shubharam-events.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029453634709:android:bb244003dc2f2168f8cf9c",
+        "android_client_info": {
+          "package_name": "ayaan.com.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029453634709-h0dnof2ilmcv1i19ioil9ngfuk3bae7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJPzRU3tSNQ-GIpJ1fQHNOpKVflRmGFoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029453634709-h0dnof2ilmcv1i19ioil9ngfuk3bae7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
