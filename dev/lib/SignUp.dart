@@ -3,18 +3,19 @@ import 'dart:ui';
 import 'package:dev/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  final VoidCallback onCLickedSignUp;
+class SignUp extends StatefulWidget {
+  final Function() onCLickedSignIn;
 
-  const Login({Key? key, required this.onCLickedSignUp}) : super(key: key);
+  const SignUp({Key? key, required this.onCLickedSignIn}) : super(key: key);
 
   @override
   _LoginState createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<SignUp> {
   final emailcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
 
@@ -34,7 +35,6 @@ class _LoginState extends State<Login> {
           ),
           SizedBox(height: 15.0),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
               ),
             ],
           ),
-          SizedBox(height: 10.0),
+          SizedBox(height: 15.0),
           Row(
             children: [
               Padding(
@@ -86,11 +86,11 @@ class _LoginState extends State<Login> {
               onSaved: (username) {},
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(32, 0, 10, 0),
+                padding: const EdgeInsets.fromLTRB(32, 20, 10, 0),
                 child: Text('Password'),
               ),
             ],
@@ -130,36 +130,36 @@ class _LoginState extends State<Login> {
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 minimumSize: Size.fromHeight(50),
-                backgroundColor: Colors.black,
-                primary: Colors.white,
+                backgroundColor: Colors.white,
+                primary: Colors.black,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
               child: Text(
-                'Sign-In',
+                'Sign-Up',
                 style: TextStyle(fontSize: 16),
               ),
-              onPressed: signin,
+              onPressed: signUp,
             ),
           ),
-          SizedBox(height: 14.0),
+          SizedBox(height: 24.0),
           RichText(
               text: TextSpan(
                   style: TextStyle(color: Colors.black),
-                  text: 'No account?  ',
+                  text: 'Already have an account?  ',
                   children: [
                 TextSpan(
                     recognizer: TapGestureRecognizer()
-                      ..onTap = widget.onCLickedSignUp,
-                    text: 'Sign Up',
+                      ..onTap = widget.onCLickedSignIn,
+                    text: 'Log in',
                     style: TextStyle(
                         decoration: TextDecoration.underline,
                         color: Theme.of(context).colorScheme.secondary))
               ]))
         ],
       ));
-  Future signin() async {
+  Future signUp() async {
     showDialog(
         context: context,
         barrierDismissible: false,
@@ -168,7 +168,7 @@ class _LoginState extends State<Login> {
             ));
 
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailcontroller.text.trim(),
           password: passwordcontroller.text.trim());
     } on FirebaseAuthException catch (e) {

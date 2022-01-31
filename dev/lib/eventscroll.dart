@@ -1,103 +1,94 @@
-import 'dart:ui';
-
 import 'package:dev/eventpage.dart';
-import 'package:dev/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:dev/contactus.dart';
+import 'eventpage.dart';
 
-/// This is the stateful widget that the main application instantiates.
-class Navbar extends StatefulWidget {
-  const Navbar({Key? key}) : super(key: key);
-
-  @override
-  State<Navbar> createState() => _NavbarState();
-}
-
-/// This is the private State class that goes with Navbar.
-class _NavbarState extends State<Navbar> {
-  int _selectedIndex = 0;
-  String appbarTitleString = "Events";
-  var appBarTitleText = new Text("Home");
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
-    events(),
-    Profile(),
-    Text(
-      'Index 2: Refer and earn',
-      style: optionStyle,
-    ),
-    contact(),
-    Text(
-      'Index 4: Logout',
-      style: optionStyle,
-    ),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      if (index == 0) {
-        appbarTitleString = "Events";
-        appBarTitleText = new Text(appbarTitleString);
-      } else if (index == 1) {
-        appbarTitleString = "Profile";
-        appBarTitleText = new Text(appbarTitleString);
-      } else if (index == 2) {
-        appbarTitleString = "Refer and Earn";
-        appBarTitleText = new Text(appbarTitleString);
-      } else if (index == 3) {
-        appbarTitleString = "Contact us";
-        appBarTitleText = new Text(appbarTitleString);
-      } else if (index == 4) {
-        appbarTitleString = "Logout";
-        appBarTitleText = new Text(appbarTitleString);
-      }
-    });
-  }
+class Events extends StatelessWidget {
+  const Events({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: appBarTitleText,
-        centerTitle: true,
-        backgroundColor: Colors.deepPurpleAccent,
-      ),
       body: SafeArea(
-        child: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-      ),
-      bottomNavigationBar: SafeArea(
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.event_rounded),
-              label: 'Events',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Refer and Earn',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.contact_phone),
-              label: 'Conatct us',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.logout),
-              label: 'Logout',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.deepPurpleAccent,
-          onTap: _onItemTapped,
-        ),
+        child: ListView.builder(
+            itemCount: 7,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+                child: Container(
+                    child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Ink.image(
+                            image: NetworkImage(
+                              'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGFydHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                            ),
+                            height: 240,
+                            fit: BoxFit.cover,
+                          ),
+                          Positioned(
+                            bottom: 16,
+                            right: 16,
+                            left: 16,
+                            child: Text(
+                              'Event Name',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 24,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(16).copyWith(bottom: 0),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Event Description',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 20, 5),
+                            child: ButtonBar(
+                              alignment: MainAxisAlignment.start,
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        new MaterialPageRoute(
+                                            builder: (context) => Eventpage()));
+                                  },
+                                  child: Text('Register for event'),
+                                  style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Colors.black87)),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )),
+              );
+            }),
       ),
     );
   }

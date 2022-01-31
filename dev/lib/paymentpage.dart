@@ -208,7 +208,7 @@ class Paypage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 30),
-                  dropdownlist(),
+                  Dropdownlist(),
                 ],
               ),
               SizedBox(height: 30),
@@ -246,15 +246,15 @@ class Paypage extends StatelessWidget {
   }
 }
 
-class dropdownlist extends StatefulWidget {
-  const dropdownlist({Key? key}) : super(key: key);
+class Dropdownlist extends StatefulWidget {
+  const Dropdownlist({Key? key}) : super(key: key);
 
   @override
-  State<dropdownlist> createState() => _dropdownlistState();
+  State<Dropdownlist> createState() => _DropdownlistState();
 }
 
 /// This is the private State class that goes with dropdownlist.
-class _dropdownlistState extends State<dropdownlist> {
+class _DropdownlistState extends State<Dropdownlist> {
   String dropdownValue = 'Insta';
 
   @override
