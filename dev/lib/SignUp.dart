@@ -130,8 +130,8 @@ class _LoginState extends State<SignUp> {
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 minimumSize: Size.fromHeight(50),
-                backgroundColor: Colors.white,
-                primary: Colors.black,
+                backgroundColor: Colors.black,
+                primary: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
