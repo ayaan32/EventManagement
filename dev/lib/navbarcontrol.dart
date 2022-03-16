@@ -45,7 +45,7 @@ class _NavbarState extends State<Navbar> {
         appbarTitleString = "Refer and Earn";
         appBarTitleText = new Text(appbarTitleString);
       } else if (index == 3) {
-        appbarTitleString = "Contact us";
+        appbarTitleString = "Get in touch";
         appBarTitleText = new Text(appbarTitleString);
       } else if (index == 4) {
         appbarTitleString = "Logout";
