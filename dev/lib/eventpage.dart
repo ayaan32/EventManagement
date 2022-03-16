@@ -16,7 +16,7 @@ class Eventpage extends StatefulWidget {
 class _EventpageState extends State<Eventpage> {
   // ignore: non_constant_identifier_names
   late String doc_id;
-  late String date, time, descrip;
+  late String date, time, descrip, ename;
   bool isLoading = false;
   @override
   void initState() {
@@ -31,12 +31,14 @@ class _EventpageState extends State<Eventpage> {
   getDetails() async {
     CollectionReference datacol =
         FirebaseFirestore.instance.collection('users');
+    // details of events
     DocumentSnapshot dets = await datacol.doc(doc_id).get();
     if (this.mounted) {
       setState(() {
         date = dets.get('date');
         time = dets.get('time');
         descrip = dets.get('desc');
+        ename = dets.get('event name');
         isLoading = false;
       });
     }
@@ -45,6 +47,7 @@ class _EventpageState extends State<Eventpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent,
         title: Text('Event'),
@@ -70,11 +73,22 @@ class _EventpageState extends State<Eventpage> {
                     padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                     child: Column(
                       children: [
-                        Card(
-                            color: Colors.grey[300],
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
+                        Container(
+                            decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: (Colors.grey[500])!,
+                                      offset: Offset(4, 4),
+                                      blurRadius: 15,
+                                      spreadRadius: 1.8),
+                                  BoxShadow(
+                                      color: (Colors.white),
+                                      offset: Offset(-4, -4),
+                                      blurRadius: 15,
+                                      spreadRadius: 1.8),
+                                ]),
                             child: SizedBox(
                               height: 120,
                               width: 350,
@@ -115,13 +129,24 @@ class _EventpageState extends State<Eventpage> {
                                 ],
                               ),
                             )),
-                        SizedBox(height: 10.0),
-                        Card(
+                        SizedBox(height: 20.0),
+                        Container(
                           clipBehavior: Clip.antiAlias,
-                          color: Colors.grey[300],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: (Colors.grey[500])!,
+                                    offset: Offset(4, 4),
+                                    blurRadius: 15,
+                                    spreadRadius: 1.8),
+                                BoxShadow(
+                                    color: (Colors.white),
+                                    offset: Offset(-4, -4),
+                                    blurRadius: 15,
+                                    spreadRadius: 1.8),
+                              ]),
                           child: SizedBox(
                             height: 150,
                             width: 350,

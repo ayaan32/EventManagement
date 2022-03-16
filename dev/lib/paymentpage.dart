@@ -1,11 +1,17 @@
 import 'dart:ui';
-
+import 'package:dev/widgets/dropdownlist.dart';
 import 'package:flutter/material.dart';
 
-class Paypage extends StatelessWidget {
+class Paypage extends StatefulWidget {
+  @override
+  _PaypageState createState() => _PaypageState();
+}
+
+class _PaypageState extends State<Paypage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent,
         title: Text('Pay here'),
@@ -17,183 +23,218 @@ class Paypage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Name',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.grey[300]!),
+                      boxShadow: [
+                        BoxShadow(
+                            color: (Colors.grey[500])!,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                        BoxShadow(
+                            color: (Colors.white),
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                      ]),
+                  child: TextFormField(
+                    autocorrect: true,
+                    textCapitalization: TextCapitalization.words,
+                    enableSuggestions: false,
+                    validator: (value) {},
+                    cursorColor: Colors.black,
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText: 'Name',
+                      hintStyle: TextStyle(color: Colors.black),
+                      filled: true,
+                      fillColor: Colors.grey[300],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white54),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    onSaved: (username) {},
                   ),
-                  onSaved: (username) {},
                 ),
               ),
               SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Address',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                            color: (Colors.grey[500])!,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                        BoxShadow(
+                            color: (Colors.white),
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                      ]),
+                  child: TextFormField(
+                    autocorrect: true,
+                    textCapitalization: TextCapitalization.words,
+                    enableSuggestions: false,
+                    validator: (value) {},
+                    cursorColor: Colors.black,
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText: 'Address',
+                      hintStyle: TextStyle(color: Colors.black),
+                      filled: true,
+                      fillColor: Colors.grey[300],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white54),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    onSaved: (username) {},
                   ),
-                  onSaved: (username) {},
                 ),
               ),
               SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Number of people(including yourself)',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                            color: (Colors.grey[500])!,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                        BoxShadow(
+                            color: (Colors.white),
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                      ]),
+                  child: TextFormField(
+                    autocorrect: true,
+                    textCapitalization: TextCapitalization.words,
+                    enableSuggestions: false,
+                    validator: (value) {},
+                    cursorColor: Colors.black,
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText:
+                          'Number of people to attend(including yourself)',
+                      hintStyle: TextStyle(color: Colors.black),
+                      filled: true,
+                      fillColor: Colors.grey[300],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white54),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    onSaved: (username) {},
                   ),
-                  onSaved: (username) {},
                 ),
               ),
               SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Address',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                            color: (Colors.grey[500])!,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                        BoxShadow(
+                            color: (Colors.white),
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                      ]),
+                  child: TextFormField(
+                    autocorrect: true,
+                    textCapitalization: TextCapitalization.words,
+                    enableSuggestions: false,
+                    validator: (value) {},
+                    cursorColor: Colors.black,
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText: 'Contact',
+                      hintStyle: TextStyle(color: Colors.black),
+                      filled: true,
+                      fillColor: Colors.grey[300],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white54),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    onSaved: (username) {},
                   ),
-                  onSaved: (username) {},
                 ),
               ),
               SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Contact',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                            color: (Colors.grey[500])!,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                        BoxShadow(
+                            color: (Colors.white),
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1.8),
+                      ]),
+                  child: TextFormField(
+                    autocorrect: true,
+                    textCapitalization: TextCapitalization.words,
+                    enableSuggestions: false,
+                    validator: (value) {},
+                    cursorColor: Colors.black,
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText: 'Emergency Contact',
+                      hintStyle: TextStyle(color: Colors.black),
+                      filled: true,
+                      fillColor: Colors.grey[300],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white54),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    onSaved: (username) {},
                   ),
-                  onSaved: (username) {},
-                ),
-              ),
-              SizedBox(height: 30),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Address',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onSaved: (username) {},
-                ),
-              ),
-              SizedBox(height: 30),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: TextFormField(
-                  autocorrect: true,
-                  textCapitalization: TextCapitalization.words,
-                  enableSuggestions: false,
-                  validator: (value) {},
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Emergency Contact',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Colors.black,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onSaved: (username) {},
                 ),
               ),
               SizedBox(height: 30),
@@ -241,47 +282,6 @@ class Paypage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class Dropdownlist extends StatefulWidget {
-  const Dropdownlist({Key? key}) : super(key: key);
-
-  @override
-  State<Dropdownlist> createState() => _DropdownlistState();
-}
-
-/// This is the private State class that goes with dropdownlist.
-class _DropdownlistState extends State<Dropdownlist> {
-  String dropdownValue = 'Insta';
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButtonHideUnderline(
-      child: DropdownButton<String>(
-        value: dropdownValue,
-        icon: const Icon(Icons.arrow_drop_down_rounded),
-        iconSize: 20,
-        elevation: 16,
-        style: const TextStyle(color: Colors.deepPurple),
-        underline: Container(
-          height: 2,
-          color: Colors.deepPurpleAccent,
-        ),
-        onChanged: (String? newValue) {
-          setState(() {
-            dropdownValue = newValue!;
-          });
-        },
-        items: <String>['Insta', 'Facebook', 'Ads', 'friends', 'Posters']
-            .map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
       ),
     );
   }

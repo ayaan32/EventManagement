@@ -18,7 +18,7 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   int _selectedIndex = 0;
   String appbarTitleString = "Events";
-  var appBarTitleText = new Text("Home");
+  var appBarTitleText = new Text("Events");
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[

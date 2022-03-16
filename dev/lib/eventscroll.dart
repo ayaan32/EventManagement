@@ -42,7 +42,7 @@ class _EventsState extends State<Events> {
                             children: [
                               Ink.image(
                                 image: NetworkImage(
-                                  'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGFydHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                                  document['e-image'],
                                 ),
                                 height: 240,
                                 fit: BoxFit.cover,
